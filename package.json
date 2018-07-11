@@ -3,25 +3,36 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng build && node ./bin/www",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^6.0.3",
+    "@angular/animations": "^6.0.7",
+    "@angular/cdk": "^6.3.2",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
     "@angular/forms": "^6.0.3",
     "@angular/http": "^6.0.3",
+    "@angular/material": "^6.3.2",
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "body-parser": "^1.18.3",
     "core-js": "^2.5.4",
+    "express": "^4.16.3",
+    "g": "^2.0.1",
+    "http-errors": "^1.6.3",
+    "mongoose": "^5.2.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.5",
     "rxjs": "^6.0.0",
+    "s": "^0.1.1",
+    "serve-favicon": "^2.5.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -43,6 +54,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1"
+    "tslint": "~5.9.1",
+    "@mts/tslint": "git+http://git.bss.ural.mts.ru/web-components/templates/tslint.git#master"
   }
 }

@@ -1,4 +1,5 @@
 {
+  "extends": "./node_modules/@mts/tslint/tslint.json",
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
@@ -23,7 +24,7 @@
     "import-spacing": true,
     "indent": [
       true,
-      "spaces"
+      "tabs"
     ],
     "interface-over-type-literal": true,
     "label-position": true,
