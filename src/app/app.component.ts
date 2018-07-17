@@ -1,26 +1,19 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ApiService, Book } from './shared/services/api.service';
+import { ApiService, Form } from './shared/services/api.service';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css'],
+	styleUrls: ['./app.component.scss'],
 	encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-	title = 'app';
+	private filledForms: Observable<Form[]>;
 
-	private books: Book[];
+	public constructor(private api: ApiService) {}
 
-	constructor(private api: ApiService) {}
-
-	ngOnInit() {
-		this.api.getBooks()
-			.subscribe(res => {
-				console.log(res);
-				this.books = res;
-			}, err => {
-				console.log(err);
-			});
+	public ngOnInit(): void {
+		this.filledForms = this.api.getForms();
 	}
 }

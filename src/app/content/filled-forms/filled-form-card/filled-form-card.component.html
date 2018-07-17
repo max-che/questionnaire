@@ -1,0 +1,34 @@
+<mat-card *ngIf="form; else loading">
+	<mat-card-title>
+		{{form.title}}
+	</mat-card-title>
+	<mat-card-subtitle>
+		{{form.description}}
+	</mat-card-subtitle>
+	<mat-card-content [appReadonlyBuilder]="form">
+
+	</mat-card-content>
+	<footer class="footer">
+		<div class="footer-left">
+			<div class="footer-line">
+				<span class="title">Респондент:</span>
+				<span class="value">{{form.respondent?.name}}</span>
+			</div>
+			<div class="footer-line" *ngIf="form.respondent?.department">
+				<span class="title">Департамент:</span>
+				<span class="value">{{form.respondent?.department}}</span>
+			</div>
+		</div>
+		<div class="footer-right">
+			<div class="footer-line">
+				<span class="title">Время заполнения:</span>
+				<span class="value">{{form.fillingDate | date:'d MMMM, y, h:mm'}}</span>
+			</div>
+		</div>
+	</footer>
+</mat-card>
+<pre>{{form | json}}</pre>
+
+<ng-template #loading>
+	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
