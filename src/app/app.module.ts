@@ -26,7 +26,7 @@ import { ContentComponent } from './content/content.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
-import { ReadonlyBuilderDirective } from './shared/directives/readonly-builder.directive';
+import { ReadonlyBuilderComponent } from './shared/components/readonly-builder/readonly-builder.component';
 
 registerLocaleData(localeRu, 'ru');
 
@@ -38,7 +38,7 @@ registerLocaleData(localeRu, 'ru');
 		FilledFormsComponent,
 		FilledFormCardComponent,
 		MainMenuComponent,
-		ReadonlyBuilderDirective
+		ReadonlyBuilderComponent
 	],
 	imports: [
 		BrowserModule,
@@ -64,6 +64,9 @@ registerLocaleData(localeRu, 'ru');
 	providers: [
 		{ provide: LOCALE_ID, useValue: 'ru' },
 		ApiService
+	],
+	entryComponents: [
+		ReadonlyBuilderComponent
 	],
 	bootstrap: [AppComponent]
 })

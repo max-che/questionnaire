@@ -5,8 +5,9 @@
 	<mat-card-subtitle>
 		{{form.description}}
 	</mat-card-subtitle>
-	<mat-card-content [appReadonlyBuilder]="form">
-
+	<button (click)="buildReadOnlyForm(form.fields)">Create component</button>
+	<mat-card-content>
+		<ng-template #readonlyBuilder></ng-template>
 	</mat-card-content>
 	<footer class="footer">
 		<div class="footer-left">

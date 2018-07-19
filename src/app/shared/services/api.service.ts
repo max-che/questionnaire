@@ -13,30 +13,32 @@ const apiUrl = '/api/filled-forms';
 export class ApiService {
 	constructor(private http: HttpClient) {}
 
-	public getForms(): Observable<Form[]> {
-		return this.http.get<Form[]>(apiUrl, httpOptions)
+	public getForms(): Observable<FilledForm[]> {
+		return this.http.get<FilledForm[]>(apiUrl, httpOptions)
 			.pipe(
 				map(this.extractData),
 				catchError(this.handleError)
 			);
 	}
 
-	public getForm(id: string): Observable<Form> {
+	public getForm(id: string): Observable<FilledForm> {
 		const url = `${apiUrl}/${id}`;
-		return this.http.get<Form>(url, httpOptions).pipe(
+		return this.http.get<FilledForm>(url, httpOptions).pipe(
 			map(this.extractData),
 			catchError(this.handleError));
 	}
 
-	public postForm(data): Observable<Form> {
-		return this.http.post<Form>(apiUrl, data, httpOptions)
+	// TODO: сделать и добавить новый интерфейс для отправляемой формы
+	public postForm(data): Observable<FilledForm> {
+		return this.http.post<FilledForm>(apiUrl, data, httpOptions)
 			.pipe(
 				catchError(this.handleError)
 			);
 	}
 
-	public updateForm(data, id): Observable<Form> {
-		return this.http.put<Form>(`${apiUrl}/${id}`, data, httpOptions)
+	// TODO: сделать и добавить новый интерфейс для отправляемой формы
+	public updateForm(data, id): Observable<FilledForm> {
+		return this.http.put<FilledForm>(`${apiUrl}/${id}`, data, httpOptions)
 			.pipe(
 				catchError(this.handleError)
 			);
@@ -68,28 +70,4 @@ export class ApiService {
 		// return an observable with a user-facing error message
 		return throwError('Something bad happened; please try again later.');
 	}
-}
-
-export interface Form {
-	respondent: {
-		name: string,
-		department: string
-	};
-	title: string;
-	description: string;
-	parent: {
-		parentId: string,
-		alias: string,
-		created: Date
-	};
-	fields: [
-		{
-			type: string,
-			choices: string[],
-			name: string,
-			description: string,
-			value: string
-		}
-	];
-	fillingDate: Date;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ApiService, Form } from './shared/services/api.service';
+import { ApiService } from './shared/services/api.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 	encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-	private filledForms: Observable<Form[]>;
+	private filledForms: Observable<FilledForm[]>;
 
 	public constructor(private api: ApiService) {}
 

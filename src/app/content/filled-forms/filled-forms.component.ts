@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService, Form } from '../../shared/services/api.service';
+import { ApiService } from '../../shared/services/api.service';
 
 @Component({
 	selector: 'app-filled-forms',
@@ -9,7 +9,7 @@ import { ApiService, Form } from '../../shared/services/api.service';
 })
 export class FilledFormsComponent implements OnInit {
 	public displayedColumns = ['date', 'title', 'description', 'respondent'];
-	public dataSource: Observable<Form[]>;
+	public dataSource: Observable<FilledForm[]>;
 
 	constructor(private api: ApiService) {}
 
