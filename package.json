@@ -55,7 +55,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1",
-    "@mts/tslint": "git+http://git.bss.ural.mts.ru/web-components/templates/tslint.git#master"
+    "tslint": "~5.9.1"
   }
 }

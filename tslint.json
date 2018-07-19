@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/@mts/tslint/tslint.json",
+  "extends": "./tslint-own.json",
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
