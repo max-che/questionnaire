@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
 
 mongoose
 	.connect(
-		'mongodb+srv://*ASK_ME*:*ASK_ME*@mx-xxh9a.mongodb.net/test?retryWrites=true',
+		'mongodb+srv://question:djghjcybr@mx-xxh9a.mongodb.net/test?retryWrites=true',
 		{
 			promiseLibrary: require('bluebird'),
 			useNewUrlParser: true
