@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng build && node ./bin/www",
+    "start": "npm install && ng build && node ./bin/www",
     "dev": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
@@ -30,7 +30,6 @@
     "http-errors": "^1.6.3",
     "mongoose": "^5.2.2",
     "morgan": "^1.9.0",
-    "nodemon": "^1.17.5",
     "rxjs": "^6.0.0",
     "s": "^0.1.1",
     "serve-favicon": "^2.5.0",
