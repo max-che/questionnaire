@@ -1,13 +1,12 @@
-<mat-card *ngIf="form; else loading">
-	<mat-card-title>
+<mat-card *ngIf="form" class="filled-form">
+	<mat-card-title class="filled-form__title">
 		{{form.title}}
 	</mat-card-title>
-	<mat-card-subtitle>
+	<mat-card-subtitle class="filled-form__subtitle">
 		{{form.description}}
 	</mat-card-subtitle>
-	<button (click)="buildReadOnlyForm(form.fields)">Create component</button>
 	<mat-card-content>
-		<ng-template #readonlyBuilder></ng-template>
+		<readonly-builder [form]="form"></readonly-builder>
 	</mat-card-content>
 	<footer class="footer">
 		<div class="footer-left">
@@ -30,6 +29,6 @@
 </mat-card>
 <pre>{{form | json}}</pre>
 
-<ng-template #loading>
-	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
+<!--<ng-template #loading>-->
+	<!--<mat-progress-bar mode="indeterminate"></mat-progress-bar>-->
+<!--</ng-template>-->

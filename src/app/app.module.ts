@@ -17,7 +17,8 @@ import {
 	MatPaginatorModule, MatProgressBarModule,
 	MatProgressSpinnerModule,
 	MatSortModule,
-	MatTableModule, MatToolbarModule
+	MatTableModule, MatToolbarModule,
+	MatSelectModule
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FilledFormsComponent } from './content/filled-forms/filled-forms.component';
@@ -26,7 +27,8 @@ import { ContentComponent } from './content/content.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
-import { ReadonlyBuilderComponent } from './shared/components/readonly-builder/readonly-builder.component';
+import { ReadonlyTemplateComponent } from './shared/components/builders/readonly-builder/readonly-template/readonly-template.component';
+import { ReadonlyBuilderComponent } from './shared/components/builders/readonly-builder/readonly-builder.component';
 
 registerLocaleData(localeRu, 'ru');
 
@@ -38,6 +40,7 @@ registerLocaleData(localeRu, 'ru');
 		FilledFormsComponent,
 		FilledFormCardComponent,
 		MainMenuComponent,
+		ReadonlyTemplateComponent,
 		ReadonlyBuilderComponent
 	],
 	imports: [
@@ -59,14 +62,15 @@ registerLocaleData(localeRu, 'ru');
 		MatCardModule,
 		MatFormFieldModule,
 		MatProgressBarModule,
-		MatToolbarModule
+		MatToolbarModule,
+		MatSelectModule
 	],
 	providers: [
 		{ provide: LOCALE_ID, useValue: 'ru' },
 		ApiService
 	],
 	entryComponents: [
-		ReadonlyBuilderComponent
+		ReadonlyTemplateComponent
 	],
 	bootstrap: [AppComponent]
 })

@@ -1,3 +1,17 @@
+@import '~@angular/material/theming';
+@import 'variables';
+
+$custom-typography: mat-typography-config(
+	$font-family: 'Roboto, monospace',
+	$headline: mat-typography-level(28px, 32px, 500),
+	$title: mat-typography-level(18px, 28px, 500),
+	$body-1: mat-typography-level(16px, 24px, 500)
+);
+
+app-filled-form-card {
+	display: block;
+}
+
 .footer {
 	font-size: 14px;
 	color: rgba(0, 0, 0, 0.54);
@@ -24,4 +38,37 @@
 
 .footer-line {
 	line-height: 1.5;
+}
+
+.filled-form {
+	&__title {
+		@include mat-typography-level-to-styles($custom-typography, headline);
+	}
+
+	.field {
+		margin-bottom: 32px;
+		&__title {
+			@include mat-typography-level-to-styles($custom-typography, title);
+		}
+		&__description {
+			@include mat-typography-level-to-styles($custom-typography, subheading-2);
+			margin-bottom: 16px;
+
+			&--select-single {
+				margin-bottom: 8px;
+			}
+		}
+		&__answer {
+			&--input {
+				padding: 8px;
+				background-color: mat-color($app-accent, 50);
+				border-radius: 3px;
+			}
+			&--select-single {
+				.mat-form-field {
+					width: 400px;
+				}
+			}
+		}
+	}
 }

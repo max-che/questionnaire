@@ -1,0 +1,33 @@
+<div *ngFor="let field of fields" class="mat-typography fields" [ngSwitch]="field.type">
+	<div *ngSwitchCase="'input'" class="field">
+		<div class="field__title">{{field.name}}</div>
+		<div class="field__description">{{field.description}}</div>
+		<div class="field__answer field__answer--input">
+			{{field.value}}
+		</div>
+		<!--<div class="mat-subheading-1">subheading-1</div>-->
+		<!--<div class="mat-body-1">body-1</div>-->
+		<!--<div class="mat-body-2">body-2</div>-->
+		<!--<div class="mat-caption">caption</div>-->
+		<!--<div class="mat-button">button</div>-->
+		<!--<div class="mat-input">input</div>-->
+		<!--<div class="mat-body-1"></div>-->
+	</div>
+	<div *ngSwitchCase="'select-single'" class="field">
+		<div class="field__title">{{field.name}}</div>
+		<div class="field__description field__description--select-single">{{field.description}}</div>
+		<div class="field__answer field__answer--select-single">
+			<mat-form-field>
+				<mat-select [(value)]="field.choices[field.value]">
+					<mat-option *ngFor="let item of field.choices"
+								value="{{item}}"
+								title="{{item}}"
+								[disabled]="item !== field.choices[field.value]">
+						{{item}}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+</div>
+
