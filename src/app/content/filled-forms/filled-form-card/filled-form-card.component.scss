@@ -51,22 +51,31 @@ app-filled-form-card {
 			@include mat-typography-level-to-styles($custom-typography, title);
 		}
 		&__description {
-			@include mat-typography-level-to-styles($custom-typography, subheading-2);
-			margin-bottom: 16px;
-
-			&--select-single {
-				margin-bottom: 8px;
-			}
+			@include mat-typography-level-to-styles($custom-typography, subheading-1);
 		}
 		&__answer {
-			&--input {
-				padding: 8px;
-				background-color: mat-color($app-accent, 50);
-				border-radius: 3px;
-			}
+			padding: 16px;
+			margin-top: 16px;
+			background-color: mat-color($app-accent, 50);
+			border-radius: 3px;
+
 			&--select-single {
+				padding: 0 16px;
 				.mat-form-field {
 					width: 400px;
+				}
+			}
+			&--radio {
+				mat-radio-button {
+					display: block;
+					& + mat-radio-button {
+						margin-top: 16px;
+					}
+				}
+			}
+			&--textarea {
+				mat-form-field {
+					width: 100%;
 				}
 			}
 		}

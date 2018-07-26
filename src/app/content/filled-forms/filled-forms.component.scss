@@ -1,7 +1,12 @@
+@import "variables";
+
 .mat-table {
 	width: 100%;
 }
-
+.mat-row:hover {
+	background-color: mat-color($app-accent, 50);
+}
 .mat-row[ng-reflect-router-link] {
 	cursor: pointer;
+	transition: background-color 200ms;
 }
