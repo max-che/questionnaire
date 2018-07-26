@@ -78,6 +78,16 @@ app-filled-form-card {
 					width: 100%;
 				}
 			}
+			&--checkbox {
+				mat-checkbox {
+					display: block;
+					margin-bottom: 16px;
+
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+				}
+			}
 		}
 	}
 }

@@ -18,7 +18,8 @@ var FilledFormSchema = new mongoose.Schema({
 			choices: [String],
 			name: String,
 			description: String,
-			value: String
+			value: [String],
+			order: Number
 		}
 	],
 	fillingDate: { type: Date, default: Date.now }

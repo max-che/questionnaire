@@ -18,7 +18,7 @@ import {
 	MatProgressSpinnerModule,
 	MatSortModule,
 	MatTableModule, MatToolbarModule,
-	MatSelectModule, MatRadioModule
+	MatSelectModule, MatRadioModule, MatCheckboxModule
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FilledFormsComponent } from './content/filled-forms/filled-forms.component';
@@ -64,7 +64,8 @@ registerLocaleData(localeRu, 'ru');
 		MatProgressBarModule,
 		MatToolbarModule,
 		MatSelectModule,
-		MatRadioModule
+		MatRadioModule,
+		MatCheckboxModule
 	],
 	providers: [
 		{ provide: LOCALE_ID, useValue: 'ru' },

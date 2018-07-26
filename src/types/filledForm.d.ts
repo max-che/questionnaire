@@ -3,7 +3,8 @@ interface Fields {
 	choices: string[];
 	name: string;
 	description: string;
-	value: string;
+	value: string[];
+	order: number;
 }
 
 interface FilledForm extends Fields{
