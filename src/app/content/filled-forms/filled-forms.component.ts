@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../shared/services/api.service';
+import { FilledFormsService } from '../../shared/services/filled-forms.service';
 
 @Component({
 	selector: 'app-filled-forms',
@@ -11,9 +11,9 @@ export class FilledFormsComponent implements OnInit {
 	public displayedColumns = ['date', 'title', 'description', 'respondent'];
 	public dataSource: Observable<FilledForm[]>;
 
-	constructor(private api: ApiService) {}
+	constructor(private filledFormsApi: FilledFormsService) {}
 
 	ngOnInit() {
-		this.dataSource = this.api.getForms();
+		this.dataSource = this.filledFormsApi.query();
 	}
 }

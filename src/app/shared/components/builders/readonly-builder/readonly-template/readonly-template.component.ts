@@ -8,7 +8,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ReadonlyTemplateComponent implements OnInit {
 	@Input()
-	public fields: Fields[];
+	public fields: Field[];
 
 	private sortByOrder(): void {
 		if (!Array.isArray(this.fields)) {
@@ -18,7 +18,7 @@ export class ReadonlyTemplateComponent implements OnInit {
 		this.fields.sort((a, b) => a.order - b.order);
 	}
 
-	public valueExists(field: Fields, i: string): boolean {
+	public valueExists(field: Field, i: string): boolean {
 		return field.value.indexOf(i) > -1;
 	}
 

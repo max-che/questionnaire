@@ -1,5 +1,5 @@
 import {
-	AfterViewChecked, AfterViewInit,
+	AfterViewInit,
 	ChangeDetectorRef,
 	Component,
 	ComponentFactory,
@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReadonlyTemplateComponent } from './readonly-template/readonly-template.component';
-import { ApiService } from '../../../services/api.service';
+import { FilledFormsService } from '../../../services/filled-forms.service';
 
 @Component({
 	selector: 'readonly-builder',
@@ -30,7 +30,7 @@ export class ReadonlyBuilderComponent implements OnDestroy, AfterViewInit {
 
 	public constructor(
 		private route: ActivatedRoute,
-		private API: ApiService,
+		private API: FilledFormsService,
 		private resolver: ComponentFactoryResolver,
 		private cd: ChangeDetectorRef
 	) {}

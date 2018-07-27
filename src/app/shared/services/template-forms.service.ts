@@ -7,44 +7,42 @@ const httpOptions = {
 	headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const apiUrl = '/api/filled-forms';
+const apiUrl = '/api/template-forms';
 
 @Injectable()
-export class ApiService {
+export class TemplateFormsService {
 	constructor(private http: HttpClient) {}
 
-	public getForms(): Observable<FilledForm[]> {
-		return this.http.get<FilledForm[]>(apiUrl, httpOptions)
+	public query(): Observable<TemplateForm[]> {
+		return this.http.get<TemplateForm[]>(apiUrl, httpOptions)
 			.pipe(
 				map(this.extractData),
 				catchError(this.handleError)
 			);
 	}
 
-	public getForm(id: string): Observable<FilledForm> {
+	public get(id: string): Observable<TemplateForm> {
 		const url = `${apiUrl}/${id}`;
-		return this.http.get<FilledForm>(url, httpOptions).pipe(
+		return this.http.get<TemplateForm>(url, httpOptions).pipe(
 			map(this.extractData),
 			catchError(this.handleError));
 	}
 
-	// TODO: сделать и добавить новый интерфейс для отправляемой формы
-	public postForm(data): Observable<FilledForm> {
-		return this.http.post<FilledForm>(apiUrl, data, httpOptions)
+	public post(data): Observable<TemplateForm> {
+		return this.http.post<TemplateForm>(apiUrl, data, httpOptions)
 			.pipe(
 				catchError(this.handleError)
 			);
 	}
 
-	// TODO: сделать и добавить новый интерфейс для отправляемой формы
-	public updateForm(data, id): Observable<FilledForm> {
-		return this.http.put<FilledForm>(`${apiUrl}/${id}`, data, httpOptions)
+	public update(data, id): Observable<TemplateForm> {
+		return this.http.put<TemplateForm>(`${apiUrl}/${id}`, data, httpOptions)
 			.pipe(
 				catchError(this.handleError)
 			);
 	}
 
-	public deleteForm(id: string): Observable<{}> {
+	public delete(id: string): Observable<{}> {
 		const url = `${apiUrl}/${id}`;
 		return this.http.delete(url, httpOptions)
 			.pipe(

@@ -2,6 +2,7 @@ import { Route, Routes } from '@angular/router';
 import { FilledFormsComponent } from './content/filled-forms/filled-forms.component';
 import { FilledFormCardComponent } from './content/filled-forms/filled-form-card/filled-form-card.component';
 import { ContentComponent } from './content/content.component';
+import { TemplateFormsComponent } from './content/prepared-forms/template-forms.component';
 
 const routes: Routes = [
 	{
@@ -10,7 +11,7 @@ const routes: Routes = [
 		data: { title: 'Something' }
 	},
 	{
-		path: 'filled-forms',
+		path: 'filled',
 		component: ContentComponent,
 		data: { title: 'Filled Forms List' },
 		children: [
@@ -25,8 +26,19 @@ const routes: Routes = [
 		]
 	},
 	{
+		path: 'prepared',
+		component: ContentComponent,
+		data: { title: 'Filled Forms List' },
+		children: [
+			{
+				path: '',
+				component: TemplateFormsComponent
+			}
+		]
+	},
+	{
 		path: '',
-		redirectTo: '/filled-forms',
+		redirectTo: '/filled',
 		pathMatch: 'full'
 	}
 ];

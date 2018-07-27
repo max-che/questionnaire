@@ -1,13 +1,8 @@
-interface Fields {
-	type: string;
-	choices: string[];
-	name: string;
-	description: string;
+interface Field extends TemplateField {
 	value: string[];
-	order: number;
 }
 
-interface FilledForm extends Fields{
+interface FilledForm {
 	respondent: {
 		name: string,
 		department: string
@@ -19,6 +14,6 @@ interface FilledForm extends Fields{
 		alias: string,
 		created: Date
 	};
-	fields: Fields[];
+	fields: Field[];
 	fillingDate: Date;
 }

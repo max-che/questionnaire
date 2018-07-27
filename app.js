@@ -1,10 +1,12 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 
-var apiRouter = require('./routes/filledForm');
+var apiRouter = [
+	require('./routes/filledForm'),
+	require('./routes/templateForm')
+];
 
 var app = express();
 

@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './shared/services/api.service';
+import { FilledFormsService } from './shared/services/filled-forms.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
 	MatButtonModule,
@@ -29,6 +29,8 @@ import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { ReadonlyTemplateComponent } from './shared/components/builders/readonly-builder/readonly-template/readonly-template.component';
 import { ReadonlyBuilderComponent } from './shared/components/builders/readonly-builder/readonly-builder.component';
+import { TemplateFormsComponent } from './content/prepared-forms/template-forms.component';
+import { TemplateFormsService } from './shared/services/template-forms.service';
 
 registerLocaleData(localeRu, 'ru');
 
@@ -41,7 +43,8 @@ registerLocaleData(localeRu, 'ru');
 		FilledFormCardComponent,
 		MainMenuComponent,
 		ReadonlyTemplateComponent,
-		ReadonlyBuilderComponent
+		ReadonlyBuilderComponent,
+		TemplateFormsComponent
 	],
 	imports: [
 		BrowserModule,
@@ -69,7 +72,8 @@ registerLocaleData(localeRu, 'ru');
 	],
 	providers: [
 		{ provide: LOCALE_ID, useValue: 'ru' },
-		ApiService
+		FilledFormsService,
+		TemplateFormsService
 	],
 	entryComponents: [
 		ReadonlyTemplateComponent

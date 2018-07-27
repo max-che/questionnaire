@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ApiService } from '../../../shared/services/api.service';
+import { FilledFormsService } from '../../../shared/services/filled-forms.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,11 +13,11 @@ export class FilledFormCardComponent implements OnInit {
 
 	public constructor(
 		private route: ActivatedRoute,
-		private API: ApiService
+		private API: FilledFormsService
 	) {}
 
 	public ngOnInit() {
-		this.API.getForm(this.route.snapshot.params['formId']).subscribe(
+		this.API.get(this.route.snapshot.params['formId']).subscribe(
 			data => {
 				this.form = data;
 			}
