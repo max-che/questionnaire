@@ -18,8 +18,8 @@ export class ReadonlyTemplateComponent implements OnInit {
 		this.fields.sort((a, b) => a.order - b.order);
 	}
 
-	public valueExists(field: Field, i: string): boolean {
-		return field.value.indexOf(i) > -1;
+	public valueExists(field: Field, i: number): boolean {
+		return field.value.indexOf(i.toString()) > -1;
 	}
 
 	public emulateReadonly() {

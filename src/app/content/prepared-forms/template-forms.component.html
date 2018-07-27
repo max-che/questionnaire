@@ -24,4 +24,4 @@
 	<tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="[row._id]"></tr>
 </table>
 
-<ng-template #loading><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+<ng-template #loading><mat-progress-bar color="accent" mode="buffer"></mat-progress-bar></ng-template>

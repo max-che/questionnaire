@@ -3,17 +3,13 @@ interface Field extends TemplateField {
 }
 
 interface FilledForm {
+	_id: string;
 	respondent: {
 		name: string,
-		department: string
+		department?: string
 	};
-	title: string;
-	description: string;
-	parent: {
-		parentId: string,
-		alias: string,
-		created: Date
-	};
+	alias?: string;
+	templateId: string;
 	fields: Field[];
 	fillingDate: Date;
 }

@@ -7,12 +7,13 @@ interface TemplateField {
 }
 
 interface TemplateForm {
+	_id: string;
 	created: {
 		by: string,
 		date: Date
 	};
 	title: string;
-	description: string;
+	description?: string;
 	alias: string;
 	fields: TemplateField[];
 }
